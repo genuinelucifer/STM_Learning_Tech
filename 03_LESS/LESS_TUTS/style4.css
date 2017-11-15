@@ -1,0 +1,27 @@
+.myclass {
+  color: #FF8000;
+}
+.myclass1 {
+  color: #5882FA;
+}
+.myclass2 {
+  color: #FF0000;
+}
+h2 {
+  font-style: italic;
+}
+.style,
+h2 {
+  background: green;
+}
+.stylenew {
+  background: #BF70A5;
+}
+.container,
+.stylenew {
+  font-style: italic;
+}
+.img,
+.stylenew {
+  font-size: 30px;
+}

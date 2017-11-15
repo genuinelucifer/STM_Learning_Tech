@@ -1,0 +1,61 @@
+#small-circle {
+  background-color: #4CAF50;
+  border-radius: 100%;
+  margin-left: 10px;
+  width: 60px;
+  height: 60px;
+}
+#small-circle:hover {
+  background-color: rgba(0, 69, 144, 0.5);
+}
+#big-circle {
+  background-color: #4CAF50;
+  border-radius: 100%;
+  margin-left: 10px;
+  width: 100px;
+  height: 100px;
+}
+#big-circle:hover {
+  background-color: rgba(0, 69, 144, 0.5);
+}
+.flash {
+  height: 150px;
+  width: 250px;
+  background-color: #004590;
+  -webkit-animation: fade-in 0.2s linear infinite alternate;
+  -moz-animation: fade-in 0.2s linear infinite alternate;
+  animation: fade-in 0.2s linear infinite alternate;
+}
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

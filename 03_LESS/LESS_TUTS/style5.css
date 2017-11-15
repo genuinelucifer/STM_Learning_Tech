@@ -1,0 +1,20 @@
+#small-circle {
+  background-color: #4CAF50;
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+}
+#big-circle {
+  background-color: #4CAF50;
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+}
+div {
+  height: 50px;
+  width: 50px;
+  background-color: #004590;
+}
+div:hover {
+  background-color: rgba(0, 69, 144, 0.5);
+}

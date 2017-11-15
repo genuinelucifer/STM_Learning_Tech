@@ -1,0 +1,48 @@
+#circle(@size: 60px){
+  background-color: #4CAF50;
+  border-radius: 100%;
+  margin-left: 10px;
+  
+  &:hover{
+    background-color: fadeout(@var, 50%)
+  }
+
+  width: @size;
+  height: @size;
+}
+
+#small-circle{
+  #circle
+}
+
+#big-circle{
+  #circle(100px)
+}
+
+.keyframes(@name; @arguments) {
+	@-moz-keyframes @name { @arguments(); }
+	@-webkit-keyframes @name { @arguments(); }
+	@keyframes @name { @arguments(); }
+}
+
+.animation(@arguments) {
+	-webkit-animation: @arguments;
+	-moz-animation: @arguments;
+	animation: @arguments;
+}
+
+@var: #004590;
+
+.flash {
+  height: 150px;
+  width: 250px;
+  background-color: @var;
+  
+  .keyframes(fade-in;{
+		0% { opacity: 0; }
+		50% {opacity: 0.5; }
+		100% { opacity: 1; }
+		});
+
+  .animation(fade-in 0.2s linear infinite alternate)
+}

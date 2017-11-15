@@ -1,0 +1,14 @@
+.myclass {
+  font-size: 40px;
+  color: red;
+}
+@media screen and (max-width: 720px) {
+  .myclass {
+    color: green;
+  }
+}
+@media mytext {
+  .myclass {
+    color: blue;
+  }
+}

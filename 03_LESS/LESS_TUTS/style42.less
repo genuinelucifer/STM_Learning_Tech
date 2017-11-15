@@ -1,0 +1,25 @@
+@import "style41.less";
+.myclass2 {
+   color: #FF0000;
+}
+
+h2 {
+   &:extend(.style);
+   font-style: italic;
+}
+
+.style {
+   background: green;
+}
+
+.stylenew:extend(.container, .img) {
+   background: #BF70A5;
+}
+
+.container {
+   font-style: italic;
+}
+
+.img {
+   font-size: 30px;
+}

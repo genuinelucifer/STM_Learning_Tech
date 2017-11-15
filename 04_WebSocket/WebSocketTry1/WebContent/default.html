@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>WebSocket Learning</title>
+	</head>
+	<body>
+		<form>
+			<input type="text" id="txtmsg">
+			<input type="button" value="Send Message" onClick="sendMessage();">
+		</form>
+		<hr>
+		<textarea rows="10" cols="60" id="txthistory"></textarea>
+		<script type="text/javascript">
+			var txthistory = document.getElementById("txthistory");
+			var txtmsg = document.getElementById("txtmsg");
+			
+			var webSocket = new WebSocket("ws://localhost:8080/WebSocketTry1/serverend");
+			webSocket.onopen = function(msg) { processOpen(msg); };
+			webSocket.onmessage = function(msg) { processMessage(msg); };
+			webSocket.onclose = function(msg) { processClose(msg); };
+			webSocket.onerror = function(msg) { processError(msg); };
+			
+			function processOpen(message)
+			{
+				txthistory.value += "Server Connected!\n";
+			}
+			function processMessage(message)
+			{
+				txthistory.value += "Server says: " + message.data + "\n";
+			}
+			function sendMessage()
+			{
+				if(txtmsg.value != "CLOSE")
+				{
+					webSocket.send(txtmsg.value);
+					txthistory.value += "Sent to Server: " + txtmsg.value + "\n";
+					txtmsg.value = "";
+				}
+				else
+					webSocket.close();
+			}
+			function processClose(message)
+			{
+				webSocket.send("Client disconnected!");
+				txthistory.value += "Server Dis-connected!\n";
+			}
+			function processError(message)
+			{
+				txthistory.value += "ERROR: " + message.data + "\n";	
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+@var: @a;
+@a: 15px;
+
+.myclass {
+   font-size: @var*2;
+   @a:20px;
+   color: ~"red";
+   
+   // Media is for defining different screens
+   @media screen {
+      @media (max-width: 720px) {
+         color: green;
+      }
+   }
+   @media mytext {
+      color: blue;
+   }
+}
